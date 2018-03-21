@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context="com.example.lili.scorekeeper.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            style="@style/style_team"
+            android:text="@string/teamA" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/style_button"
+                android:onClick="decreaseTeamA"
+                android:text="@string/decrease" />
+
+            <TextView
+                android:id="@+id/team_a_score"
+                style="@style/style_score" />
+
+            <Button
+                style="@style/style_button"
+                android:onClick="increaseTeamA"
+                android:text="@string/increase" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="16dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            style="@style/style_team"
+            android:text="@string/teamB" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/style_button"
+                android:onClick="decreaseTeamB"
+                android:text="@string/decrease" />
+
+            <TextView
+                android:id="@+id/team_b_score"
+                style="@style/style_score" />
+
+            <Button
+                style="@style/style_button"
+                android:onClick="increaseTeamB"
+                android:text="@string/increase" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:onClick="resetScor"
+            android:text="@string/reset"
+            android:textColor="@color/colorTextButton" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
