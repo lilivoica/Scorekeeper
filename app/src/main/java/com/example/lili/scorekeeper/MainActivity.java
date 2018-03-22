@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     int scoreTeamA = 0;
     int scoreTeamB = 0;
 
+    //region Activity lifecycle and overridings
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle saveInstanceState) {
         saveInstanceState.putInt(SCORE_TEAM_A_BUNDLE_KEY, scoreTeamA);
         saveInstanceState.putInt(SCORE_TEAM_B_BUNDLE_KEY, scoreTeamB);
-
         super.onSaveInstanceState(saveInstanceState);
     }
 
@@ -37,14 +37,16 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
     }
+    //endregion
 
-    //Resets the score for both teams back to 0.
+    //region Resets the score for both teams back to 0.
     public void resetScore(View v) {
         scoreTeamB = 0;
         scoreTeamA = 0;
         displayForTeamB(scoreTeamB);
         displayForTeamA(scoreTeamA);
     }
+    //endregion
 
     //region Displays the given score for Team A/TeamB.
     public void displayForTeamA(int score) {
@@ -77,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamB(scoreTeamB);
     }
     //endregion
-
 
     //region Decrease the score for Team A/B by 1 point.
     public void decreaseTeamA(View view) {
