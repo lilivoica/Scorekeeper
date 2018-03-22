@@ -6,5 +6,5 @@
     <string name="increase">+</string>
     <string name="reset">reset</string>
     <string name="moreThat100"> You cannot have more than 100 points</string>
-    <string name="lessThat0"> You cannot have less than 0 point</string>
+    <string name="lessThan0"> You cannot have less than 0 point</string>
 </resources>

@@ -9,8 +9,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String SCORE_TEAM_A_BUNDLE_KEY ="scoreTeamA";
-    private final String SCORE_TEAM_B_BUNDLE_KEY ="scoreTeamB" ;
+    private final String SCORE_TEAM_A_BUNDLE_KEY = "scoreTeamA";
+    private final String SCORE_TEAM_B_BUNDLE_KEY = "scoreTeamB";
 
     int scoreTeamA = 0;
     int scoreTeamB = 0;
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamA(scoreTeamA);
     }
 
-    // Displays the given score for Team A/TeamB.
+    //region Displays the given score for Team A/TeamB.
     public void displayForTeamA(int score) {
         TextView scoreView1 = findViewById(R.id.team_a_score);
         scoreView1.setText(String.valueOf(score));
@@ -56,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
         TextView scoreView2 = findViewById(R.id.team_b_score);
         scoreView2.setText(String.valueOf(score));
     }
-    //
+    //endregion
 
-    //Increase the score for Team A/B by 1 point.
+    //region Increase the score for Team A/B by 1 point.
     public void increaseTeamA(View view) {
         if (scoreTeamA == 100) {
             Toast.makeText(this, getString(R.string.moreThat100), Toast.LENGTH_SHORT).show();
@@ -76,12 +76,13 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB++;
         displayForTeamB(scoreTeamB);
     }
-    //
+    //endregion
 
-    //Decrease the score for Team A/B by 1 point.
+
+    //region Decrease the score for Team A/B by 1 point.
     public void decreaseTeamA(View view) {
         if (scoreTeamA == 0) {
-            Toast.makeText(this, getString(R.string.lessThat0), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.lessThan0), Toast.LENGTH_SHORT).show();
             return;
         }
         scoreTeamA--;
@@ -90,11 +91,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void decreaseTeamB(View view) {
         if (scoreTeamB == 0) {
-            Toast.makeText(this, getString(R.string.lessThat0), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.lessThan0), Toast.LENGTH_SHORT).show();
             return;
         }
         scoreTeamB--;
         displayForTeamB(scoreTeamB);
     }
-    //
+    //endregion
+
 }
